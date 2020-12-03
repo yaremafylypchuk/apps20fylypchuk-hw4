@@ -35,7 +35,8 @@ public class RWayTrie implements Trie {
             return node;
         }
         char cur = string.charAt(i);
-        node.next[transformIndex(cur)] = addHelper(node.next[transformIndex(cur)], string, weight, i + 1);
+        node.next[transformIndex(cur)] = addHelper(node.next[transformIndex(cur)],
+                string, weight, i + 1);
         return node;
     }
 
@@ -77,7 +78,8 @@ public class RWayTrie implements Trie {
             node.value = 0;
         } else {
             char cur = word.charAt(i);
-            node.next[transformIndex(cur)] = deleteHelper(node.next[transformIndex(cur)], word, i + 1);
+            node.next[transformIndex(cur)] = deleteHelper(node.next[transformIndex(cur)],
+                    word, i + 1);
         }
         if (node.value != 0) {
             return node;
@@ -109,10 +111,15 @@ public class RWayTrie implements Trie {
 
     private void collect(Node node, String prefx,
                          Queue q) {
-        if (node == null) return;
-        if (node.value != 0) q.enqueue(prefx);
-        for (int c = 0; c < R; c++)
+        if (node == null) {
+            return;
+        }
+        if (node.value != 0) {
+            q.enqueue(prefx);
+        }
+        for (int c = 0; c < R; c++) {
             collect(node.next[c], prefx + (char) (c + 97), q);
+        }
     }
 
     private Node get(Node node, String word) {

@@ -20,19 +20,20 @@ public class Queue {
     public Object dequeue() {
         Object ans = this.peek();
         queue = queue.removeFirst();
-        this.size --;
+        this.size--;
         return ans;
     }
 
     public void enqueue(Object e) {
-        this.size ++;
+        this.size++;
         queue = queue.add(e);
     }
 
     public String toString() {
         return queue.toString();
     }
-    public int getSize(){
+
+    public int getSize() {
         return this.size;
     }
 }
