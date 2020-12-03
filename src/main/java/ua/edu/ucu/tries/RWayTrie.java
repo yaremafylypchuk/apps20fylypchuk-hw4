@@ -6,13 +6,13 @@ import ua.edu.ucu.immutable.Queue;
 import java.util.ArrayList;
 
 public class RWayTrie implements Trie {
-    private final int R = 26;
+    private static final int R = 26;
     private Node root = new Node();
     private int size = 0;
 
-    private class Node {
+    private static class Node {
         private int value;
-        private Node[] next;
+        private final Node[] next;
 
         private Node() {
             this.value = 0;
