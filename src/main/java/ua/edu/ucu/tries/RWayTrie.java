@@ -35,7 +35,8 @@ public class RWayTrie implements Trie {
             return node;
         }
         char cur = string.charAt(i);
-        node.next[transformIndex(cur)] = addHelper(node.next[transformIndex(cur)],
+        node.next[transformIndex(cur)] = addHelper(
+                node.next[transformIndex(cur)],
                 string, weight, i + 1);
         return node;
     }
@@ -78,7 +79,8 @@ public class RWayTrie implements Trie {
             node.value = 0;
         } else {
             char cur = word.charAt(i);
-            node.next[transformIndex(cur)] = deleteHelper(node.next[transformIndex(cur)],
+            node.next[transformIndex(cur)] = deleteHelper(
+                    node.next[transformIndex(cur)],
                     word, i + 1);
         }
         if (node.value != 0) {
