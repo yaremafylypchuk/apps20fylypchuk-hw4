@@ -120,7 +120,8 @@ public class RWayTrie implements Trie {
             q.enqueue(prefx);
         }
         for (int c = 0; c < R; c++) {
-            collect(node.next[c], prefx + (char) (c + 97), q);
+            char next = (char) (c + 97);
+            collect(node.next[c], prefx + next, q);
         }
     }
 
