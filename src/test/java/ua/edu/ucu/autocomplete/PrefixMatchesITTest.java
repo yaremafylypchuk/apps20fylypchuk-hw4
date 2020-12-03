@@ -2,13 +2,15 @@
 package ua.edu.ucu.autocomplete;
 
 import static org.hamcrest.Matchers.containsInAnyOrder;
+
 import org.junit.Test;
+
 import static org.junit.Assert.*;
+
 import org.junit.Before;
 import ua.edu.ucu.tries.RWayTrie;
 
 /**
- *
  * @author Andrii_Rodionov
  */
 public class PrefixMatchesITTest {
